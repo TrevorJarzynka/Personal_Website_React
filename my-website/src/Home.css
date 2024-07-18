@@ -1,0 +1,64 @@
+/* Global styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Reset section margins and paddings */
+  section {
+    margin: 0;
+    padding: 0;
+  }
+#home {
+    background-image: url('Images/marco-meyer-eAAjKAGEKmI-unsplash.jpg');
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    color: #443a3a; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin: 0; 
+    padding: 0;
+}
+
+#home h1 {
+    font-size: clamp(60px, 10vw, 72px); 
+    margin: 0 auto;
+    text-align: center; 
+}
+
+.social-links {
+    list-style-type: none; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center;
+    gap: 20px; 
+}
+
+.social-links li {
+    display: inline-block; 
+}
+
+.social-links a {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-decoration: none; 
+}
+
+.social-links li a:hover i {
+    color: rgb(130, 242, 231); 
+}
+
+.social-links i {
+    font-size: 28px; 
+    color: #443a3a; 
+}
+section {
+    padding: 20px;
+    margin:  0px;
+}

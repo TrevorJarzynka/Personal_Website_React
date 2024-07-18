@@ -1,0 +1,47 @@
+/* Global styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Reset section margins and paddings */
+  section {
+    margin: 0;
+    padding: 0;
+  }
+/* About section */
+#about {
+    text-align: center;
+    background-color: #333333;
+    color: rgb(161, 159, 159);
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    gap: 0;
+  }
+  
+  #about h3 {
+    color: rgb(130, 242, 231);
+  }
+  
+  .about-container {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: left; 
+    gap: 20px; 
+  }
+  
+  .circle-image { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 2px solid rgb(130, 242, 231); 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    margin: 10px;
+  }

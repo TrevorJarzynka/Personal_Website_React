@@ -1,0 +1,51 @@
+/* Global styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Reset section margins and paddings */
+  section {
+    margin: 0;
+    padding: 0;
+  }
+#resume {
+    padding: 20px;
+    margin: 0;
+    background-color: black;
+    color: white;
+  }
+  
+  #resume h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: aquamarine;
+  }
+  
+  .work-experience, .education {
+    margin-bottom: 20px;
+  }
+  
+  .job, .school {
+    margin-bottom: 15px;
+  }
+  
+  .job h5, .school h5 {
+    margin: 0;
+    color: lightblue;
+  }
+  
+  .job p, .school p {
+    margin: 5px 0;
+  }
+  
+  .job ul {
+    list-style-type: disc;
+    margin: 10px 0 0 20px;
+  }
+  
+  .job li {
+    margin-bottom: 5px;
+  }
+  

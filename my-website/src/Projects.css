@@ -1,0 +1,70 @@
+#projects {
+    text-align: center; /* Center the header */
+    background-color: rgb(223, 226, 225);
+  }
+  
+  #projects h2 {
+    margin-bottom: 20px; /* Add some space below the header */
+  }
+  
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the project boxes */
+  }
+  
+  .project-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: height 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .project-box:hover {
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .project-thumbnail {
+    display: none;
+  }
+  
+  .project-name {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  .project-description {
+    display: none;
+  }
+  
+  .project-box:hover .project-description {
+    display: block;
+  }
+  
+  .project-name a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .project-name a:hover {
+    text-decoration: underline;
+  }
+  
