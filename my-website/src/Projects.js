@@ -1,39 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Projects.css';
 
 const projects = [
   {
-    name: 'Project 1',
-    image: './test.jpg',  
-    description: 'Detailed description for project 1.',
-    link: 'http://example.com/project1'  // Replace with the actual link
+    name: 'AI Study Assistant',
+    image: './AI_Study_Assistant_Image.jpg',
+    description: 'Currently developing a study assistant that features natural language processing for personalized learning assistance.',
   },
   {
-    name: 'Project 2',
-    image: 'path-to-image2.jpg',  // Replace with actual path to your image
-    description: 'Detailed description for project 2.',
-    link: 'http://example.com/project2'  // Replace with the actual link
+    name: 'Image Classification',
+    image: './Image_Classification.jpg',
+    description: 'Designed and implemented a Convolutional Neural Network (CNN) model for image classification',
   },
   {
-    name: 'Project 3',
-    image: 'path-to-image3.jpg',  // Replace with actual path to your image
-    description: 'Detailed description for project 3.',
-    link: 'http://example.com/project3'  // Replace with the actual link
+    name: 'File System Organizer',
+    image: './File_system_organizer_image.jpg',
+    description: 'Developed a Python-based personalized file system organizer that automatically sorts and categorizes files by keywords, efficiently organizing them into the appropriate directories.',
+  },
+  {
+    name: 'Quantum Computing Paper',
+    image: './Quantum_Computer_Image.jpeg',
+    description: 'A comprehensive paper demonstrating my understanding and newly acquired knowledge of this emerging technology'
   }
-  // Add more projects as needed
+ 
+  
 ];
 
 function Projects() {
+  const [hoveredProject, setHoveredProject] = useState(null);
+
   return (
     <section id="projects">
       <h2>Projects</h2>
       <div className="project-container">
         {projects.map((project, index) => (
-          <div className="project-box" key={index} style={{ backgroundImage: `url(${project.image})` }}>
-            <div className="project-content">
-              <h3 className="project-name">
-                <a href={project.link} target="_blank" rel="noopener noreferrer">{project.name}</a>
-              </h3>
+          <div 
+            className="project-box" 
+            key={index} 
+            style={{ backgroundImage: `url(${project.image})` }}
+            onMouseEnter={() => setHoveredProject(index)}
+            onMouseLeave={() => setHoveredProject(null)}
+          >
+            <div className={`project-content ${hoveredProject === index ? 'expanded' : ''}`}>
+              <h3 className="project-name">{project.name}</h3>
               <p className="project-description">{project.description}</p>
             </div>
           </div>

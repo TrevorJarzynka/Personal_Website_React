@@ -1,51 +1,157 @@
-/* Global styles */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  /* Reset section margins and paddings */
-  section {
-    margin: 0;
-    padding: 0;
-  }
 #resume {
-    padding: 20px;
-    margin: 0;
-    background-color: black;
-    color: white;
+  padding: 50px 0;
+  background-color: #728f8c;
+  color: #333;
+}
+
+#resume h3 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 2.5em;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #454546;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #fff;
+  border: 4px solid  #443a3a;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #fff;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #fff;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #fff transparent transparent;
+}
+
+.right::after {
+  left: -16px;
+}
+
+.timeline-content {
+  padding: 20px 30px;
+  background-color: rgb(230, 229, 229);
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-date {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.timeline-title {
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.timeline-subtitle {
+  color: rgb(124, 10, 6);
+  margin: 0 0 15px 0;
+}
+
+.timeline-responsibilities {
+  list-style-type: none;
+  padding: 0;
+}
+
+.timeline-responsibilities li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-responsibilities li::before {
+  content: "•";
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 31px;
   }
   
-  #resume h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: aquamarine;
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
   }
   
-  .work-experience, .education {
-    margin-bottom: 20px;
+  .timeline-item::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
   }
-  
-  .job, .school {
-    margin-bottom: 15px;
+
+  .left::after, .right::after {
+    left: 15px;
   }
-  
-  .job h5, .school h5 {
-    margin: 0;
-    color: lightblue;
+
+  .right {
+    left: 0%;
   }
-  
-  .job p, .school p {
-    margin: 5px 0;
-  }
-  
-  .job ul {
-    list-style-type: disc;
-    margin: 10px 0 0 20px;
-  }
-  
-  .job li {
-    margin-bottom: 5px;
-  }
-  
+}

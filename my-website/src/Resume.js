@@ -3,73 +3,42 @@ import './Resume.css';
 
 const workExperience = [
   {
-    company: 'Company A',
-    position: 'Position A',
-    duration: 'January 2020 - Present',
+    company: 'Virginia Tech',
+    position: 'Quantum Computing Undergraduate Research Assistant',
+    duration: 'June 2024 - August 2024',
     responsibilities: [
-      'Responsibility 1',
-      'Responsibility 2',
-      'Responsibility 3'
+      'Collaborated with Professor Mantri to work through complex qunatum computing problems',
+      'Authored a comprehensive paper demonstrating my understanding and newly acquired knowledge of this emerging technology'
     ]
   },
   {
-    company: 'Company B',
-    position: 'Position B',
-    duration: 'June 2018 - December 2019',
+    company: 'Virginia Tech',
+    position: 'Undegraduate Teaching Assistant',
+    duration: 'August 2024 - Present',
     responsibilities: [
-      'Responsibility 1',
-      'Responsibility 2',
-      'Responsibility 3'
+      'Assist in helping students get an overview of the computer science major and discipline',
+      'Leveraged my personal experiences to mentor and guide 35 students in computer science, providing valuable pointers and insights',
+      'Encouraged an interactive learning experience'
     ]
-  }
-];
-
-const education = [
-  {
-    institution: 'University A',
-    degree: 'Degree A',
-    duration: '2014 - 2018'
-  },
-  {
-    institution: 'University B',
-    degree: 'Degree B',
-    duration: '2010 - 2014'
   }
 ];
 
 function Resume() {
   return (
     <section id="resume">
-      <h3>Resume</h3>
-      <div className="work-experience">
-        <h4>Work Experience</h4>
+      <h3>Work Experience</h3>
+      <div className="timeline">
         {workExperience.map((job, index) => (
-          <div key={index} className="job">
-            <div className="job-left">
-              <h5>{job.company}</h5>
-              <p>{job.duration}</p>
-            </div>
-            <div className="job-right">
-              <p><strong>{job.position}</strong></p>
-              <ul>
+          <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+            <div className="timeline-content">
+              <div className="timeline-date">{job.duration}</div>
+              <h4 className="timeline-title">{job.position}</h4>
+              <h5 className="timeline-subtitle">{job.company}</h5>
+              <ul className="timeline-responsibilities">
                 {job.responsibilities.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="education">
-        <h4>Education</h4>
-        {education.map((school, index) => (
-          <div key={index} className="school">
-            <div className="school-left">
-              <h5>{school.institution}</h5>
-              <p>{school.duration}</p>
-            </div>
-            <div className="school-right">
-              <p><strong>{school.degree}</strong></p>
             </div>
           </div>
         ))}
