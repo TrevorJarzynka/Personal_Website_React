@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Personal_Website_React/static/css/main.8c0c9aec.css",
+    "main.js": "/Personal_Website_React/static/js/main.fbb863b0.js",
+    "static/js/453.195b869a.chunk.js": "/Personal_Website_React/static/js/453.195b869a.chunk.js",
+    "static/media/marco-meyer-eAAjKAGEKmI-unsplash.jpg": "/Personal_Website_React/static/media/marco-meyer-eAAjKAGEKmI-unsplash.27bb09e78b4d02f729ed.jpg",
+    "static/media/trevorj04@vt.edu-f59d652a copy.jpg": "/Personal_Website_React/static/media/trevorj04@vt.edu-f59d652a copy.e563daf248d4f9c32415.jpg",
+    "static/media/fa-solid-900.ttf": "/Personal_Website_React/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
+    "static/media/fa-brands-400.ttf": "/Personal_Website_React/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
+    "static/media/fa-solid-900.woff2": "/Personal_Website_React/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
+    "static/media/fa-brands-400.woff2": "/Personal_Website_React/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
+    "static/media/fa-regular-400.ttf": "/Personal_Website_React/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
+    "static/media/fa-regular-400.woff2": "/Personal_Website_React/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
+    "static/media/fa-v4compatibility.ttf": "/Personal_Website_React/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
+    "static/media/fa-v4compatibility.woff2": "/Personal_Website_React/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
+    "index.html": "/Personal_Website_React/index.html",
+    "main.8c0c9aec.css.map": "/Personal_Website_React/static/css/main.8c0c9aec.css.map",
+    "main.fbb863b0.js.map": "/Personal_Website_React/static/js/main.fbb863b0.js.map",
+    "453.195b869a.chunk.js.map": "/Personal_Website_React/static/js/453.195b869a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c0c9aec.css",
+    "static/js/main.fbb863b0.js"
+  ]
+}
