@@ -20,7 +20,7 @@ const projects = [
   {
     name: 'Quantum Computing Paper',
     image: './Quantum_Computer_Image.jpeg',
-    description: 'A comprehensive paper demonstrating my understanding and newly acquired knowledge of this emerging technology'
+    description: 'A focused analysis capturing my understanding BCQ and QHE encryption techniques. These are two essential protocols for enabling secure quantum computing on untrusted servers.'
   }
  
   
