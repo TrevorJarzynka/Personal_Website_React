@@ -1,37 +1,35 @@
-name: Build and Deploy Website
+name: Deploy to GitHub Pages
 
 on:
-  # Triggers the workflow on push events but only for the main branch
   push:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  deploy:
-    name: Build and Deploy
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Setup Node.js
+      
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          # Removed cache option that requires lock file
-
-      - name: Install dependencies
-        run: npm install --no-package-lock  # This will avoid looking for or creating a lock file
-
-      - name: Install FontAwesome dependency
-        run: npm install --save @fortawesome/fontawesome-free --no-package-lock
-
-      - name: Build website
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build
-          branch: gh-pages
+      
+      - name: Install Dependencies
+        run: npm install
+      
+      - name: Install gh-pages
+        run: npm install gh-pages --save-dev
+      
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run build
+          npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
