@@ -1,4 +1,4 @@
-name: Test and Deploy Website
+name: Build and Deploy Website
 
 on:
   # Triggers the workflow on push events but only for the main branch
@@ -19,16 +19,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
+          # Removed cache option that requires lock file
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-package-lock  # This will avoid looking for or creating a lock file
 
       - name: Install FontAwesome dependency
-        run: npm install --save @fortawesome/fontawesome-free
-
-      - name: List installed packages (debug)
-        run: npm list --depth=0
+        run: npm install --save @fortawesome/fontawesome-free --no-package-lock
 
       - name: Build website
         run: npm run build
