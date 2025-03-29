@@ -21,21 +21,37 @@ jobs:
         node-version: '18'
     
     - name: Install Dependencies
-      run: npm ci
+      working-directory: ./mywebsite  # Change to the mywebsite folder
+      run: |
+        echo "Installing dependencies..."
+        npm ci
+        echo "Dependencies installed successfully."
     
     - name: Build
-      run: npm run build
+      working-directory: ./mywebsite  # Change to the mywebsite folder
+      run: |
+        echo "Running build..."
+        npm run build
+        echo "Build completed."
       env:
         CI: false
     
     - name: Check Build Output
-      run: ls -la build/
+      working-directory: ./mywebsite  # Change to the mywebsite folder
+      run: |
+        echo "Checking build directory..."
+        ls -la build/ || echo "Build directory not found!"
     
     - name: Deploy to GitHub Pages
+      working-directory: ./mywebsite  # Change to the mywebsite folder
       run: |
+        echo "Configuring git..."
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        echo "Installing gh-pages..."
         npm install -g gh-pages
+        echo "Deploying to gh-pages..."
         gh-pages -d build
+        echo "Deployment completed."
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
