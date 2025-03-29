@@ -7,16 +7,18 @@ on:
 
 jobs:
   build-and-deploy:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     
     - name: Use Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
-        node-version: '16'
+        node-version: '18'
         
     - name: Install and Build
       run: |
@@ -29,8 +31,7 @@ jobs:
       run: |
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-        
         npm install -g gh-pages
-        gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+        gh-pages -d build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
