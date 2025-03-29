@@ -15,20 +15,27 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     
+    - name: List Repository Contents
+      run: |
+        echo "Listing root directory contents:"
+        ls -la
+        echo "Listing my-website directory contents:"
+        ls -la my-website || echo "my-website not found!"
+    
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
     
     - name: Install Dependencies
-      working-directory: ./mywebsite  # Change to the mywebsite folder
+      working-directory: ./my-website  # Updated to match your folder name
       run: |
         echo "Installing dependencies..."
         npm ci
         echo "Dependencies installed successfully."
     
     - name: Build
-      working-directory: ./mywebsite  # Change to the mywebsite folder
+      working-directory: ./my-website  # Updated to match your folder name
       run: |
         echo "Running build..."
         npm run build
@@ -37,13 +44,13 @@ jobs:
         CI: false
     
     - name: Check Build Output
-      working-directory: ./mywebsite  # Change to the mywebsite folder
+      working-directory: ./my-website  # Updated to match your folder name
       run: |
         echo "Checking build directory..."
         ls -la build/ || echo "Build directory not found!"
     
     - name: Deploy to GitHub Pages
-      working-directory: ./mywebsite  # Change to the mywebsite folder
+      working-directory: ./my-website  # Updated to match your folder name
       run: |
         echo "Configuring git..."
         git config --global user.name "${{ github.actor }}"
