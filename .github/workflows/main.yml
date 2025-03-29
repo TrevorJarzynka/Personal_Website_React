@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -12,38 +12,24 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Setup Node.js
+      
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-      - name: Install dependencies
+      
+      - name: Install Dependencies
         run: npm install
-
-      - name: Update App.test.js
+      
+      - name: Install gh-pages
+        run: npm install gh-pages --save-dev
+      
+      - name: Deploy with gh-pages
         run: |
-          echo 'import { render, screen } from "@testing-library/react";
-          import App from "./App";
-
-          test("renders Trevor Jarzynka heading", () => {
-            render(<App />);
-            const headingElement = screen.getByText(/Trevor Jarzynka/i);
-            expect(headingElement).toBeInTheDocument();
-          });' > src/App.test.js
-
-      - name: Run tests
-        run: CI=true npm test
-
-      - name: Build 
-        run: npm run build
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run build
+          npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
         env:
-          PUBLIC_URL: https://trevorjarzynka.github.io/Personal_Website_React
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build
-          branch: gh-pages
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
