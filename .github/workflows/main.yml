@@ -10,47 +10,47 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    
+
     - name: List Repository Contents
       run: |
         echo "Listing root directory contents:"
         ls -la
         echo "Listing my-website directory contents:"
         ls -la my-website || echo "my-website not found!"
-    
+
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-    
+
     - name: Install Dependencies
-      working-directory: ./my-website  # Updated to match your folder name
+      working-directory: ./my-website
       run: |
         echo "Installing dependencies..."
         npm ci
         echo "Dependencies installed successfully."
-    
+
     - name: Build
-      working-directory: ./my-website  # Updated to match your folder name
+      working-directory: ./my-website
       run: |
         echo "Running build..."
         npm run build
         echo "Build completed."
       env:
         CI: false
-    
+
     - name: Check Build Output
-      working-directory: ./my-website  # Updated to match your folder name
+      working-directory: ./my-website
       run: |
         echo "Checking build directory..."
         ls -la build/ || echo "Build directory not found!"
-    
+
     - name: Deploy to GitHub Pages
-      working-directory: ./my-website  # Updated to match your folder name
+      working-directory: ./my-website
       run: |
         echo "Configuring git..."
         git config --global user.name "${{ github.actor }}"
@@ -58,7 +58,7 @@ jobs:
         echo "Installing gh-pages..."
         npm install -g gh-pages
         echo "Deploying to gh-pages..."
-        gh-pages -d build
+        gh-pages -d build -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         echo "Deployment completed."
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
