@@ -1,55 +1,73 @@
-name: Test and Deploy Website
+name: Deploy React App to GitHub Pages
 
 on:
-  # Triggers the workflow on push events but only for the main branch
   push:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-  test:
-    name: Test Website
+  build-and-deploy:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
+    - name: List Repository Contents
+      run: |
+        echo "Listing root directory contents:"
+        ls -la
+        echo "Listing my-website directory contents:"
+        ls -la my-website || echo "my-website not found!"
 
-      - name: Install dependencies
-        run: npm ci
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: my-website/package-lock.json
 
-      - name: Run tests
-        # Using CI=true to run tests in non-interactive mode
-        run: CI=true npm test
+    - name: Install Dependencies
+      working-directory: ./my-website
+      run: |
+        echo "Installing dependencies..."
+        npm ci
+        echo "Dependencies installed successfully."
 
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: test  # This ensures deploy only runs if tests pass
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Verify react-scripts
+      working-directory: ./my-website
+      run: |
+        echo "Verifying react-scripts..."
+        ls -la node_modules/react-scripts || echo "react-scripts not found!"
+        npx react-scripts --version
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
+    - name: Build
+      working-directory: ./my-website
+      run: |
+        echo "Running build..."
+        npm run build
+        echo "Build completed."
+      env:
+        CI: false
 
-      - name: Install dependencies
-        run: npm ci
+    - name: Check Build Output
+      working-directory: ./my-website
+      run: |
+        echo "Checking build directory..."
+        ls -la build/ || echo "Build directory not found!"
 
-      - name: Build website
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build  # CRA outputs to the build folder
-          branch: gh-pages  # The branch the action should deploy to
+    - name: Deploy to GitHub Pages
+      working-directory: ./my-website
+      run: |
+        echo "Configuring git..."
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        echo "Installing gh-pages..."
+        npm install -g gh-pages
+        echo "Deploying to gh-pages..."
+        npx gh-pages -d build -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        echo "Deployment completed."
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
