@@ -34,7 +34,6 @@ function About() {
               <li>React</li>
               <li>Django</li>
               <li>JUnit</li>
-              <li>SwiftUI</li>
             </ul>
           </div>
           <div className="skill-category">
@@ -42,6 +41,7 @@ function About() {
             <ul>
               <li>TensorFlow</li>
               <li>Posix spawn</li>
+              <li>Qiskit</li>
             </ul>
           </div>
           <div className="skill-category">
@@ -53,7 +53,7 @@ function About() {
           <div className="skill-category">
             <h5>DataBases</h5>
             <ul>
-              <li>PostgreSQL</li>
+              <li>MySQL</li>
             </ul>
           </div>
         </div>
