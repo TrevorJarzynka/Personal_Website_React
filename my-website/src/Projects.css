@@ -60,11 +60,28 @@
   }
   
   .project-name a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .project-name a:hover {
-    text-decoration: underline;
-  }
+  text-decoration: none; 
+  color: #ffffff; 
+  transition: color 0.3s ease, text-decoration 0.3s ease; 
+  position: relative; 
+}
+
+.project-name a:hover {
+  color: #b7cee7; 
+  text-decoration: underline; 
+}
+
+.project-name a::after {
+  content: '\f35d';
+  font-family: 'Font Awesome 6 Free'; /* Icon */
+  font-weight: 900; 
+  margin-left: 5px; 
+  font-size: 0.8em; 
+  opacity: 0.7; 
+  transition: opacity 0.3s ease;
+}
+
+.project-name a:hover::after {
+  opacity: 1; 
+}
   

@@ -1,32 +1,42 @@
 import React, { useState } from 'react';
 import './Projects.css';
 import quantumPdf from './assets/Quantum_Computing_Paper.pdf';
-import aiStudyImage from './assets/AI_Study_Assistant_Image.jpg';
 import imageClassificationImage from './assets/Image_Classification.jpg';
 import fileSystemOrganizerImage from './assets/File_system_organizer_image.jpg';
-import quantumComputerImage from './assets/Quantum_Computer_Image.jpeg';
+import quantumComputerImage from './assets/Quantum_Computer_Image.png';
+import quantumSimulatorImage from './assets/Quantum_Simulator_Image.png';
+import TopographyPredictionImage from './assets/3D_Topography_Image.png';
 
 const projects = [
   {
-    name: 'AI Study Assistant',
-    image: aiStudyImage,  
-    description: 'Currently developing a study assistant that features natural language processing for personalized learning assistance.',
-  },
-  {
-    name: 'Image Classification',
-    image: imageClassificationImage,
-    description: 'Designed and implemented a Convolutional Neural Network (CNN) model for image classification',
-  },
-  {
-    name: 'File System Organizer',
-    image: fileSystemOrganizerImage,
-    description: 'Developed a Python-based personalized file system organizer that automatically sorts and categorizes files by keywords, efficiently organizing them into the appropriate directories.',
+    name: 'Quantum Simulator',
+    image: quantumSimulatorImage,
+    description: 'Developing an interactive quantum circuit simulator, enabling real-time visualization of circuit behavior and quantum state evolution. ',
+    link: 'https://github.com/TrevorJarzynka/Quantum_Simulator',
   },
   {
     name: 'Quantum Computing Paper',
     image: quantumComputerImage,
     description: 'A focused analysis capturing my understanding BCQ and QHE encryption techniques. These are two essential protocols for enabling secure quantum computing.',
     link: quantumPdf,
+  },
+  {
+    name: '3D Printing Topography Prediction',
+    image: TopographyPredictionImage, 
+    description: 'Led team of four to develop a web app using Dr. Mahmood\u2019s machine learning models to predict metal 3D printing topography with 94\u201399% accuracy, reducing costs for the technology',
+    link: 'https://amsurfaces.cs.vt.edu'
+  },
+  {
+    name: 'Image Classification',
+    image: imageClassificationImage,
+    description: 'Designed and implemented a Convolutional Neural Network (CNN) model for image classification',
+    link: 'https://github.com/TrevorJarzynka/Image-Classification',
+  },
+  {
+    name: 'File System Organizer',
+    image: fileSystemOrganizerImage,
+    description: 'Developed a Python-based personalized file system organizer that automatically sorts and categorizes files by keywords, efficiently organizing them into the appropriate directories.',
+    link: 'https://github.com/TrevorJarzynka/File_Manager',
   }
 ];
 
