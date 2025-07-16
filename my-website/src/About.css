@@ -34,7 +34,6 @@ section {
 }
 #about h2 {
   color: #333333;
-
 }
 
 .about-container {
@@ -45,12 +44,17 @@ section {
   gap: 20px; 
 }
 
+.about-container p {
+  line-height: 1.8; /* Increases spacing between lines */
+  margin: 0; /* Remove default paragraph margins */
+}
+
 .circle-image { 
   width: 100px; 
   height: 100px; 
   border-radius: 50%; 
   object-fit: cover;
-  border: 2px solidrgb(184, 240, 234);
+  border: 2px solid rgb(184, 240, 234); /* Fixed the missing space */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
   margin: 10px;
 }
@@ -68,11 +72,9 @@ section {
 }
 
 .skill-category {
-  width: 150px; /* You can adjust this width if necessary */
+  width: 150px; 
   text-align: center;
 }
-
-
 
 .skill-category h5 {
   color:rgb(184, 240, 234);

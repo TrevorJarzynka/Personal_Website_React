@@ -14,7 +14,7 @@ const workExperience = [
   {
     company: 'Virginia Tech',
     position: 'Undegraduate Teaching Assistant',
-    duration: 'August 2024 - Present',
+    duration: 'August 2023 - December 2024',
     responsibilities: [
       'Assist in helping students get an overview of the computer science major and discipline',
       'Leveraged my personal experiences to mentor and guide 35 students in computer science, providing valuable pointers and insights',

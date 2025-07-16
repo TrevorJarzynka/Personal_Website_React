@@ -11,7 +11,7 @@ const projects = [
   {
     name: 'Quantum Simulator',
     image: quantumSimulatorImage,
-    description: 'Developing an interactive quantum circuit simulator, enabling real-time visualization of circuit behavior and quantum state evolution. ',
+    description: 'Developing an interactive quantum circuit simulator, enabling real-time visualization of circuit behavior and quantum state evolution.',
     link: 'https://github.com/TrevorJarzynka/Quantum_Simulator',
   },
   {
@@ -22,8 +22,8 @@ const projects = [
   },
   {
     name: '3D Printing Topography Prediction',
-    image: TopographyPredictionImage, 
-    description: 'Led team of four to develop a web app using Dr. Mahmood\u2019s machine learning models to predict metal 3D printing topography with 94\u201399% accuracy, reducing costs for the technology',
+    image: TopographyPredictionImage,
+    description: 'Led team of four to develop a web app using Dr. Mahmood’s machine learning models to predict metal 3D printing topography with 94–99% accuracy, reducing costs for the technology',
     link: 'https://amsurfaces.cs.vt.edu'
   },
   {
@@ -48,14 +48,14 @@ function Projects() {
       <h2>Projects</h2>
       <div className="project-container">
         {projects.map((project, index) => (
-          <div 
-            className="project-box" 
-            key={index} 
+          <div
+            className="project-box"
+            key={index}
             style={{ backgroundImage: `url(${project.image})` }}
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
           >
-            <div className={`project-content ${hoveredProject === index ? 'expanded' : ''}`}>
+            <div className="project-front">
               <h3 className="project-name">
                 {project.link ? (
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
@@ -65,7 +65,20 @@ function Projects() {
                   project.name
                 )}
               </h3>
-              <p className="project-description">{project.description}</p>
+            </div>
+            <div className={`project-back ${hoveredProject === index ? 'visible' : ''}`}>
+              <div className="project-content">
+                <h3 className="project-name">
+                  {project.link ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      {project.name}
+                    </a>
+                  ) : (
+                    project.name
+                  )}
+                </h3>
+                <p className="project-description">{project.description}</p>
+              </div>
             </div>
           </div>
         ))}

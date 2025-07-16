@@ -1,87 +1,131 @@
 #projects {
-    text-align: center; /* Center the header */
-    background-color: rgb(223, 226, 225);
-  }
-  
-  #projects h2 {
-    margin-bottom: 20px; /* Add some space below the header */
-  }
-  
-  .project-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the project boxes */
-  }
-  
-  .project-box {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    margin: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    transition: height 0.3s ease, box-shadow 0.3s ease;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    display: flex;
-    align-items: flex-end;
-  }
-  
-  .project-box:hover {
-    height: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    padding: 10px;
-    border-radius: 0 0 10px 10px;
-  }
-  
-  .project-thumbnail {
-    display: none;
-  }
-  
-  .project-name {
-    font-size: 1.5em;
-    margin: 10px 0;
-  }
-  
-  .project-description {
-    display: none;
-  }
-  
-  .project-box:hover .project-description {
-    display: block;
-  }
-  
-  .project-name a {
-  text-decoration: none; 
-  color: #ffffff; 
-  transition: color 0.3s ease, text-decoration 0.3s ease; 
-  position: relative; 
+  text-align: center;
+  background-color: #f5f7fa;
+  padding: 60px 20px;
+}
+
+#projects h2 {
+  margin-bottom: 40px;
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-box {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  background-size: cover;
+  background-position: center;
+  perspective: 1000px;
+}
+
+.project-box:hover {
+  transform: translateY(-10px);
+}
+
+.project-front,
+.project-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-front {
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.project-back {
+  background: linear-gradient(135deg, rgba(33, 150, 243, 0.9) 0%, rgba(3, 169, 244, 0.9) 100%);
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-back.visible {
+  transform: rotateY(0deg);
+}
+
+.project-box:hover .project-front {
+  transform: rotateY(-180deg);
+}
+
+.project-box:hover .project-back {
+  transform: rotateY(0deg);
+}
+
+.project-content {
+  width: 100%;
+  padding: 25px;
+  color: white;
+}
+
+.project-name {
+  font-size: 1.9em;
+  font-weight: 600;
+  margin: 0 0 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.project-front .project-name {
+  padding: 15px;
+  width: 100%;
+}
+
+.project-description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-back.visible .project-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-name a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
 
 .project-name a:hover {
-  color: #b7cee7; 
-  text-decoration: underline; 
+  color: #e0f7ff;
 }
 
 .project-name a::after {
   content: '\f35d';
-  font-family: 'Font Awesome 6 Free'; /* Icon */
-  font-weight: 900; 
-  margin-left: 5px; 
-  font-size: 0.8em; 
-  opacity: 0.7; 
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-left: 10px;
+  font-size: 0.95em;
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
 .project-name a:hover::after {
-  opacity: 1; 
+  opacity: 1;
 }
-  

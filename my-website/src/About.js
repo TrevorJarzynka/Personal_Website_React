@@ -10,10 +10,12 @@ function About() {
       <div className="about-container">
         <img src={headshot} alt="Headshot" className="circle-image" />
         <p>
-          I am a Senior studying computer science at Virginia Tech. I'm also <br />
-          a Quantum Computing Undergraduate Research Assistant. My goals are to
-          <br /> expand my knowledge of the quantum computing industry and push the limits
-          <br /> of this revolutionary technology.
+          I am a recent Computer Science graduate from Virginia Tech with experience as <br />
+          a Quantum Computing Undergraduate Research Assistant. Currently, I'm seeking <br />
+          opportunities in the tech industry while continuing to work on personal quantum <br />
+          computing projects. My goals are to expand my knowledge of the quantum computing <br />
+          field and contribute to pushing the limits of this revolutionary technology through <br />
+          both professional work and independent research.
         </p>
       </div>
 
@@ -64,4 +66,3 @@ function About() {
 }
 
 export default About;
-
