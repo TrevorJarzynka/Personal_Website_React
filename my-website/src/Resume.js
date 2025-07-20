@@ -4,11 +4,11 @@ import './Resume.css';
 const workExperience = [
   {
     company: 'Virginia Tech',
-    position: 'Quantum Computing Undergraduate Research Assistant',
-    duration: 'June 2024 - August 2024',
+    position: 'Quantum Computing Research Internship',
+    duration: 'June 2024 - December 2024',
     responsibilities: [
-      'Collaborated with Professor Mantri to work through complex quantum computing problems',
-      'Authored a comprehensive paper demonstrating my understanding and newly acquired knowledge of this emerging technology'
+      'I completed complex quantum computing problems',
+      'I authored a comprehensive paper demonstrating my understanding and newly acquired knowledge of this emerging technology'
     ]
   },
   {
@@ -18,7 +18,7 @@ const workExperience = [
     responsibilities: [
       'Assist in helping students get an overview of the computer science major and discipline',
       'Leveraged my personal experiences to mentor and guide 35 students in computer science, providing valuable pointers and insights',
-      'Encouraged an interactive learning experience'
+      'I encouraged an interactive learning experience'
     ]
   }
 ];
