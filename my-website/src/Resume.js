@@ -7,7 +7,7 @@ const workExperience = [
     position: 'Quantum Computing Undergraduate Research Assistant',
     duration: 'June 2024 - August 2024',
     responsibilities: [
-      'Collaborated with Professor Mantri to work through complex qunatum computing problems',
+      'Collaborated with Professor Mantri to work through complex quantum computing problems',
       'Authored a comprehensive paper demonstrating my understanding and newly acquired knowledge of this emerging technology'
     ]
   },
