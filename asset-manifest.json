@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Personal_Website_React/static/css/main.b8d955ea.css",
-    "main.js": "/Personal_Website_React/static/js/main.f9068eaf.js",
+    "main.js": "/Personal_Website_React/static/js/main.c7a526f6.js",
     "static/js/453.2291aba8.chunk.js": "/Personal_Website_React/static/js/453.2291aba8.chunk.js",
     "static/media/Image_Classification.jpg": "/Personal_Website_React/static/media/Image_Classification.773de09daa390c4127fb.jpg",
     "static/media/marco-meyer-eAAjKAGEKmI-unsplash.jpg": "/Personal_Website_React/static/media/marco-meyer-eAAjKAGEKmI-unsplash.27bb09e78b4d02f729ed.jpg",
@@ -21,11 +21,11 @@
     "static/media/fa-v4compatibility.woff2": "/Personal_Website_React/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/Personal_Website_React/index.html",
     "main.b8d955ea.css.map": "/Personal_Website_React/static/css/main.b8d955ea.css.map",
-    "main.f9068eaf.js.map": "/Personal_Website_React/static/js/main.f9068eaf.js.map",
+    "main.c7a526f6.js.map": "/Personal_Website_React/static/js/main.c7a526f6.js.map",
     "453.2291aba8.chunk.js.map": "/Personal_Website_React/static/js/453.2291aba8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b8d955ea.css",
-    "static/js/main.f9068eaf.js"
+    "static/js/main.c7a526f6.js"
   ]
 }
