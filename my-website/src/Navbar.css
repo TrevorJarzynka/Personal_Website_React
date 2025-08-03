@@ -5,12 +5,28 @@ header, footer {
     padding: 1em;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+header.scrolled {
+    background: rgba(51, 51, 51, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
 #navbar {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 1rem 0;
     overflow: hidden;
-    background-color: #333333;
+    background-color: transparent;
     display: flex; 
     justify-content: center;
     align-items: center; 
@@ -22,13 +38,19 @@ header, footer {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 5px;
 }
 
 #navbar li a:hover {
     color: rgb(130, 242, 231);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-#navbar li a.email-link {
+#navbar li a.email-link,
+#navbar li a.linkedin-link,
+#navbar li a.github-link,
+#navbar li a.email-button {
     padding: 10px;
     display: flex;
     align-items: center;
@@ -37,46 +59,71 @@ header, footer {
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
 }
 
-#navbar li a.email-link i {
+#navbar li a i {
     font-size: 20px; 
-    color: #007bff; 
+    transition: all 0.3s ease;
 }
 
-#navbar li a.email-link:hover {
-    background-color: #0056b3; 
-    color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
-}
-
-#navbar li a.email-link:hover i {
+#navbar li a.email-link i,
+#navbar li a.email-button i {
     color: white; 
 }
 
-@keyframes rotate-icon {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+#navbar li a.linkedin-link i {
+    color: white; 
 }
 
-#navbar li a.email-link:hover i {
-    animation: rotate-icon 0.5s ease-in-out;
+#navbar li a.github-link i {
+    color: white; 
+}
+
+#navbar li a:hover {
+    transform: translateY(-2px);
+}
+
+#navbar li a.email-link:hover,
+#navbar li a.email-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); 
+}
+
+#navbar li a.linkedin-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#navbar li a.github-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#navbar li a:hover i {
+    color: white; 
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
-    #navbar li a.email-link i {
+    #navbar li a i {
         font-size: 16px; 
+    }
+    
+    #navbar {
+        padding: 0.5rem 0;
+    }
+    
+    #navbar li a {
+        padding: 8px 12px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     #navbar {
-        flex-direction: column; 
+        flex-wrap: wrap;
+        gap: 5px;
     }
 
     #navbar li {
-        margin: 5px 0; 
+        margin: 2px;
     }
 }

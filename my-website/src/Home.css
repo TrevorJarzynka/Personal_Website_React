@@ -3,17 +3,20 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-  }
-  
-  /* Reset section margins and paddings */
-  section {
+    scroll-behavior: smooth;
+}
+
+/* Reset section margins and paddings */
+section {
     margin: 0;
     padding: 0;
-  }
+}
+
 #home {
     background-image: url('Images/marco-meyer-eAAjKAGEKmI-unsplash.jpg');
     background-size: cover; 
     background-position: center; 
+    background-attachment: fixed; 
     height: 100vh; 
     color: #443a3a; 
     display: flex;
@@ -23,12 +26,18 @@ html, body {
     text-align: center; 
     margin: 0; 
     padding: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 #home h1 {
     font-size: clamp(60px, 10vw, 72px); 
-    margin: 0 auto;
-    text-align: center; 
+    margin: 0 auto 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease 0.5s forwards;
+    color: #443a3a; 
 }
 
 .social-links {
@@ -37,6 +46,9 @@ html, body {
     display: flex; 
     justify-content: center;
     gap: 20px; 
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 1s forwards;
 }
 
 .social-links li {
@@ -47,18 +59,85 @@ html, body {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    text-decoration: none; 
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.social-links li a:hover {
+    color: rgb(130, 242, 231);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-links i {
+    font-size: 28px; 
+    color: #443a3a; 
+    transition: all 0.3s ease;
 }
 
 .social-links li a:hover i {
     color: rgb(130, 242, 231); 
 }
 
-.social-links i {
-    font-size: 28px; 
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     color: #443a3a; 
+    animation: bounce 2s infinite;
+    opacity: 0;
+    animation: fadeInBounce 1s ease 1.5s forwards, bounce 2s infinite 2.5s;
 }
-section {
-    padding: 20px;
-    margin:  0px;
+
+.scroll-indicator i {
+    font-size: 24px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBounce {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #home {
+        background-attachment: scroll; 
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .social-links i {
+        font-size: 24px;
+    }
 }

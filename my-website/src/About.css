@@ -17,21 +17,44 @@ section {
   background-color: #333333;
   color: rgb(161, 159, 159);
   margin: 0; 
-  padding: 0;
+  padding: 40px 20px;
   box-sizing: border-box;
   justify-content: center; 
   align-items: center; 
   flex-direction: column; 
   gap: 0;
+  position: relative;
+  z-index: 2;
+  /* Animation setup */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+#about.reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #about h3 {
-  margin-bottom: 20;
+  margin-bottom: 20px;
   color: rgb(184, 240, 234);
 }
+
 #about h4 {
   color: rgb(197, 199, 199);
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.2s;
 }
+
+#about.reveal h4 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 #about h2 {
   color: #333333;
 }
@@ -41,44 +64,94 @@ section {
   align-items: center; 
   justify-content: center; 
   text-align: left; 
-  gap: 20px; 
+  gap: 30px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease 0.4s;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about.reveal .about-container {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-container p {
-  line-height: 1.8; /* Increases spacing between lines */
-  margin: 0; /* Remove default paragraph margins */
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1em;
+  flex: 1;
+  min-width: 0; 
+  word-wrap: break-word;
+  hyphens: auto;
+  text-align: justify;
 }
 
 .circle-image { 
-  width: 100px; 
-  height: 100px; 
+  width: 100px;
+  height: 100px;
   border-radius: 50%; 
   object-fit: cover;
-  border: 2px solid rgb(184, 240, 234); /* Fixed the missing space */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  border: 2px solid rgb(184, 240, 234);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin: 10px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; 
+}
+
+.circle-image:hover {
+  transform: scale(1.05);
 }
 
 /* Technical skills section */
 .tech-skills {
   margin-top: 10px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease 0.6s;
+}
+
+#about.reveal .tech-skills {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tech-skills h4 {
+  color: rgb(184, 240, 234);
+  font-size: 1.8em;
+  margin-bottom: 20px;
 }
 
 .skills-grid {
   display: flex;
-  justify-content: center; /* Aligns items to the start without large gaps */
-  gap: 10px; /* Reduce the gap further */
+  justify-content: center;
+  gap: 10px;
   margin-top: 10px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .skill-category {
-  width: 150px; 
+  width: 150px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px 15px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(184, 240, 234, 0.2);
+}
+
+.skill-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(184, 240, 234, 0.2);
 }
 
 .skill-category h5 {
-  color:rgb(184, 240, 234);
+  color: rgb(184, 240, 234);
   margin-bottom: 10px;
+  font-size: 1em;
 }
 
 .skill-category ul {
@@ -88,4 +161,88 @@ section {
 
 .skill-category ul li {
   margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.skill-category:hover ul li {
+  color: white;
+}
+
+/* Responsive design for better adaptability */
+@media (max-width: 1024px) {
+  .about-container {
+    max-width: 90%;
+    gap: 25px;
+  }
+  
+  .about-container p {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    max-width: 95%;
+  }
+  
+  .about-container p {
+    text-align: center;
+    max-width: none;
+    font-size: 1em;
+  }
+  
+  .circle-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .skills-grid {
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .skill-category {
+    padding: 15px 10px;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+    padding: 30px 15px;
+  }
+  
+  #about h4 {
+    font-size: 1.5em;
+  }
+  
+  .about-container p {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+  
+  .circle-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .skills-grid {
+    gap: 10px;
+  }
+  
+  .skill-category {
+    width: 130px;
+    padding: 15px 8px;
+  }
+  
+  .skill-category h5 {
+    font-size: 0.9em;
+  }
+  
+  .skill-category ul li {
+    font-size: 0.85em;
+  }
 }

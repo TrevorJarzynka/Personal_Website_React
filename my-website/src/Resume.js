@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import './Resume.css';
+import { useScrollAnimation } from './useScrollAnimation';
 
 const workExperience = [
   {
@@ -13,7 +14,7 @@ const workExperience = [
   },
   {
     company: 'Virginia Tech',
-    position: 'Undegraduate Teaching Assistant',
+    position: 'Undergraduate Teaching Assistant',
     duration: 'August 2023 - December 2024',
     responsibilities: [
       'Assist in helping students get an overview of the computer science major and discipline',
@@ -24,32 +25,8 @@ const workExperience = [
 ];
 
 function Resume() {
-  const timelineRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          } else {
-            entry.target.classList.remove('visible');
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the item is visible
-    );
-
-    timelineRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      timelineRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
+  // Use the scroll animation hook
+  useScrollAnimation('resume');
 
   return (
     <section id="resume">
@@ -59,8 +36,7 @@ function Resume() {
           <div
             key={index}
             className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
-            ref={(el) => (timelineRefs.current[index] = el)}
-            style={{ '--delay': `${index * 0.2}s` }}
+            style={{ transitionDelay: `${index * 0.2 + 0.4}s` }}
           >
             <div className="timeline-content">
               <div className="timeline-date">{job.duration}</div>

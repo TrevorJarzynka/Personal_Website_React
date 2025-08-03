@@ -1,20 +1,23 @@
 import React from 'react';
 import './About.css';
 import headshot from './Images/trevorj04@vt.edu-f59d652a copy.jpg';
+import { useScrollAnimation } from './useScrollAnimation';
 
 function About() {
+  // Use the scroll animation hook
+  useScrollAnimation('about');
+
   return (
     <section id="about">
-      <h2>  space </h2>
       <h4>Introduction</h4>
       <div className="about-container">
         <img src={headshot} alt="Headshot" className="circle-image" />
         <p>
-          I am a recent Computer Science graduate from Virginia Tech with experience as <br />
-          a Quantum Computing Undergraduate Research Assistant. Currently, I'm seeking <br />
-          opportunities in the tech industry while continuing to work on personal quantum <br />
-          computing projects. My goals are to expand my knowledge of the quantum computing <br />
-          field and contribute to pushing the limits of this revolutionary technology through <br />
+          I am a recent Computer Science graduate from Virginia Tech with experience as 
+          a Quantum Computing Undergraduate Research Assistant. Currently, I'm seeking 
+          opportunities in the tech industry while continuing to work on personal quantum 
+          computing projects. My goals are to expand my knowledge of the quantum computing 
+          field and contribute to pushing the limits of this revolutionary technology through 
           both professional work and independent research.
         </p>
       </div>
@@ -53,14 +56,13 @@ function About() {
             </ul>
           </div>
           <div className="skill-category">
-            <h5>DataBases</h5>
+            <h5>Databases</h5>
             <ul>
               <li>MySQL</li>
             </ul>
           </div>
         </div>
       </div>
-      <h2>  space </h2>
     </section>
   );
 }
