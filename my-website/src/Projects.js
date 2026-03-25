@@ -12,7 +12,7 @@ const projects = [
     name: 'Quantum Simulator',
     image: quantumSimulatorImage,
     description: 'Developing an interactive quantum circuit simulator, enabling real-time visualization of circuit behavior and quantum state evolution.',
-    link: 'https://github.com/TrevorJarzynka/Quantum_Simulator',
+    link: 'https://quantum-simulator-zeta.vercel.app/',
   },
   {
     name: 'Quantum Computing Paper',
