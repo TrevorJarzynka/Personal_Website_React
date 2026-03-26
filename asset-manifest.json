@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Personal_Website_React/static/css/main.15518409.css",
-    "main.js": "/Personal_Website_React/static/js/main.6cbdb3e8.js",
+    "main.js": "/Personal_Website_React/static/js/main.1a1f1235.js",
     "static/js/453.2291aba8.chunk.js": "/Personal_Website_React/static/js/453.2291aba8.chunk.js",
     "static/media/Image_Classification.jpg": "/Personal_Website_React/static/media/Image_Classification.773de09daa390c4127fb.jpg",
     "static/media/marco-meyer-eAAjKAGEKmI-unsplash.jpg": "/Personal_Website_React/static/media/marco-meyer-eAAjKAGEKmI-unsplash.27bb09e78b4d02f729ed.jpg",
     "static/media/3D_Topography_Image.png": "/Personal_Website_React/static/media/3D_Topography_Image.3ad405c54bc900c2e98b.png",
+    "static/media/Quantum_Simulator_Image.png": "/Personal_Website_React/static/media/Quantum_Simulator_Image.dc49d5abb1603ac59e4e.png",
     "static/media/trevorj04@vt.edu-f59d652a copy.jpg": "/Personal_Website_React/static/media/trevorj04@vt.edu-f59d652a copy.e563daf248d4f9c32415.jpg",
     "static/media/fa-solid-900.ttf": "/Personal_Website_React/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/File_system_organizer_image.jpg": "/Personal_Website_React/static/media/File_system_organizer_image.608a1eb25afb67579ecc.jpg",
-    "static/media/Quantum_Simulator_Image.png": "/Personal_Website_React/static/media/Quantum_Simulator_Image.2f859fddaa44953821cd.png",
     "static/media/fa-brands-400.ttf": "/Personal_Website_React/static/media/fa-brands-400.1815e00441357e01619e.ttf",
     "static/media/Quantum_Computing_Paper.pdf": "/Personal_Website_React/static/media/Quantum_Computing_Paper.ce22d5262578ac82cb27.pdf",
     "static/media/fa-solid-900.woff2": "/Personal_Website_React/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
@@ -21,11 +21,11 @@
     "static/media/fa-v4compatibility.woff2": "/Personal_Website_React/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/Personal_Website_React/index.html",
     "main.15518409.css.map": "/Personal_Website_React/static/css/main.15518409.css.map",
-    "main.6cbdb3e8.js.map": "/Personal_Website_React/static/js/main.6cbdb3e8.js.map",
+    "main.1a1f1235.js.map": "/Personal_Website_React/static/js/main.1a1f1235.js.map",
     "453.2291aba8.chunk.js.map": "/Personal_Website_React/static/js/453.2291aba8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.15518409.css",
-    "static/js/main.6cbdb3e8.js"
+    "static/js/main.1a1f1235.js"
   ]
 }
